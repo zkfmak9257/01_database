@@ -1,0 +1,37 @@
+-- 01_SELECT : 특정 테이블의 원하는 데이터(행)을 조회하는 구문
+
+
+-- tbl_menu 테이블의 모든 메뉴 이름 조회(menu_name) 조회
+/*범위 주석 (컨트롤 + 쉬프트 + / )*/
+/*2*/
+SELECT
+    menu_name
+/*1 첫번째로 해석! */
+  from
+    tbl_menu;
+
+-- 모든 메뉴의 menu_code, menu_name, menu_price 조회
+SELECT
+    menu_code, menu_name, menu_price
+FROM
+    tbl_menu;
+
+
+-- tbl_menu 테이블 모든 열 조회
+SELECT
+    menu_code,
+    menu_name,
+    menu_price,
+    category_code,
+    orderable_status
+FROM
+    tbl_menu;
+
+-- 또 다른 방법으론 * <- 넣으면 된다. * == 모든
+
+SELECT
+    *
+FROM
+    tbl_menu;
+
+
