@@ -54,7 +54,5 @@ SELECT CONCAT('홍',' ','길동') AS 'full name'; -- 띄어쓰기도 문자열
 
 -- menudb 데이터베이스 내 모든 테이블 조회해보기
 
-SELECT
-    *
-FROM
-    tbl_category;
+SELECT * FROM tbl_category;
+
