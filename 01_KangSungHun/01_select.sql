@@ -34,4 +34,14 @@ SELECT
 FROM
     tbl_menu;
 
+select 7 + 3;
+SELECT 7 * 3;
+SELECT 7 - 3;œ
+SELECT 7 / 3;
+SELECT 7 % 3;
 
+SELECT 7 + 3, 7 - 3; -- 여러 컬럼 조회도 가능
+
+-- 내장 함수 이용
+SELECT NOW();
+SELECT CONCAT('홍','길동');
