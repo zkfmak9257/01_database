@@ -159,13 +159,21 @@ FROM tbl_category
 WHERE ref_category_code IS NULL;
 
 -- 25번. tbl_category 테이블에서 상위 카테고리가 있는(ref_category_code가 NULL이 아닌) 카테고리를 조회하세요.
-
-
+SELECT *
+FROM tbl_category
+WHERE ref_category_code IS NOT NULL;
 -- ========================================
 -- 종합 문제
 -- ========================================
 
 -- 26번. tbl_menu 테이블에서 가격이 7,000원 이상이고, 카테고리 코드가 4, 6, 10번 중 하나이며, 주문 가능한 메뉴를 가격 오름차순으로 조회하세요.
+SELECT *
+FROM tbl_menu
+WHERE
+
+
+
+
 
 
 -- 27번. tbl_menu 테이블에서 메뉴명에 '아'가 포함되거나 가격이 5,000원 이하인 메뉴를 메뉴명 오름차순으로 조회하세요.
