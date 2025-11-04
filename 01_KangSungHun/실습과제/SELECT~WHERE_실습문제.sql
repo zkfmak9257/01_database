@@ -169,21 +169,40 @@ WHERE ref_category_code IS NOT NULL;
 -- 26번. tbl_menu 테이블에서 가격이 7,000원 이상이고, 카테고리 코드가 4, 6, 10번 중 하나이며, 주문 가능한 메뉴를 가격 오름차순으로 조회하세요.
 SELECT *
 FROM tbl_menu
-WHERE
-
-
-
-
-
+WHERE menu_price >= 7000
+AND category_code IN (4, 6, 10)
+AND orderable_status = 'Y'
+ORDER BY menu_price ASC;
 
 -- 27번. tbl_menu 테이블에서 메뉴명에 '아'가 포함되거나 가격이 5,000원 이하인 메뉴를 메뉴명 오름차순으로 조회하세요.
 
+    SELECT *
+    FROM tbl_menu
+    WHERE menu_name LIKE '%아%'
+    OR menu_price <= 5000
+    ORDER BY menu_name ASC;
 
 -- 28번. tbl_menu 테이블에서 카테고리 코드가 8~12번 사이이고, 메뉴명에 '빵'이 포함된 메뉴의 메뉴명과 가격을 조회하세요.
+
+    SELECT menu_name, menu_price
+    FROM tbl_menu
+    WHERE category_code BETWEEN 8 AND 12
+    AND menu_name LIKE '%빵%';
 
 
 -- 29번. tbl_category 테이블에서 상위 카테고리 코드가 1번 또는 2번인 카테고리의 카테고리명과 상위 카테고리 코드를 조회하세요.
 
+    SELECT tbl_category.category_name, category_code
+FROM tbl_category
+    WHERE category_code IN (1,2);
+
 
 -- 30번. tbl_menu 테이블에서 주문 불가능하거나(orderable_status = 'N'), 가격이 10,000원 미만인 메뉴 중 메뉴명이 '빵', '떡', '찜' 중 하나로 끝나는 메뉴를 조회하세요. (여러 조건 조합)
 
+SELECT *
+FROM tbl_menu
+WHERE orderable_status = 'N'
+OR menu_price < 10000
+AND menu_name LIKE '빵%'
+AND menu_name LIKE '떡%'
+AND menu_name LIKE '찜%'
